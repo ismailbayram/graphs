@@ -74,16 +74,17 @@ int main() {
   kruskal = (Edge *)malloc(0 * sizeof(Edge));
 
   for (i = 0; i < SIZE; i++) {
-    if (visited[gr[i].u] + visited[gr[i].v] != 2) {  // unless both 2 nodes are visited
+    // graph names are integer so -1 added to visited array indexes of them
+    if (visited[gr[i].u - 1] + visited[gr[i].v - 1] != 2) {  // unless both 2 nodes are visited
       kruskal = (Edge *)realloc(kruskal, (k + 1) * sizeof(Edge));
       kruskal[k].u = gr[i].u;
       kruskal[k].v = gr[i].v;
       kruskal[k].w = gr[i].w;
       k++;
-      if (visited[gr[i].u] == 0) {
-        visited[gr[i].u] = 1;
+      if (visited[gr[i].u - 1] == 0) {
+        visited[gr[i].u - 1] = 1;
       } else {
-        visited[gr[i].v] = 1;
+        visited[gr[i].v - 1] = 1;
       }
     }
   }
