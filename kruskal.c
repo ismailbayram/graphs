@@ -7,6 +7,7 @@ typedef struct {
 } Edge;
 
 void inputGraph(Edge gr[]) {
+  // create graph manually instead of redundant input jobs.
   gr[0].u = 1;
   gr[0].v = 2;
   gr[0].w = 4;
@@ -36,10 +37,10 @@ void inputGraph(Edge gr[]) {
   gr[8].w = 3;
 }
 
-void printGraph(Edge gr[], char *title) {
+void printGraph(Edge gr[], char *title, int size) {
   int i;
   printf("\n--GRAPH %s--\n", title);
-  for (i = 0; i < SIZE; i++) {
+  for (i = 0; i < size; i++) {
     printf("%d - %d (%d)\n", gr[i].u, gr[i].v, gr[i].w);
   }
 }
@@ -62,15 +63,19 @@ void sortGraph(Edge gr[]) {
 }
 
 int main() {
-  Edge gr[SIZE], kruskal[SIZE];
+  Edge gr[SIZE], *kruskal;
   static int visited[SIZE];
   int i, k = 0;
   inputGraph(gr);
-  printGraph(gr, "PURE");
+  printGraph(gr, "PURE", SIZE);
   sortGraph(gr);
-  printGraph(gr, "SORTED");
+  printGraph(gr, "SORTED", SIZE);
+
+  kruskal = (Edge *)malloc(0 * sizeof(Edge));
+
   for (i = 0; i < SIZE; i++) {
     if (visited[gr[i].u] + visited[gr[i].v] != 2) {  // unless both 2 nodes are visited
+      kruskal = (Edge *)realloc(kruskal, (k + 1) * sizeof(Edge));
       kruskal[k].u = gr[i].u;
       kruskal[k].v = gr[i].v;
       kruskal[k].w = gr[i].w;
@@ -82,6 +87,7 @@ int main() {
       }
     }
   }
-  printGraph(kruskal, "KRUSKAL");
+
+  printGraph(kruskal, "KRUSKAL", k);
   return 0;
 }
