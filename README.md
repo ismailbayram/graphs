@@ -32,6 +32,13 @@
 
 ## Depth-First Search Algorithm
 
+Example Graph
+0 1 1 0 0
+1 0 0 0 0
+1 0 0 1 1
+0 0 1 0 1
+0 0 1 1 0
+
 ```
 Stack : 1
 VISITED ARRAY : 0 1 0 0 0
