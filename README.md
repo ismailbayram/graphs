@@ -22,13 +22,12 @@
 4 - 6 (7)
 3 - 4 (8)
 
---GRAPH KRUSKAL--
+--GRAPH KRUSKAL (minumum spanning tree)--
 1 - 3 (1)
 1 - 4 (1)
 2 - 3 (2)
 3 - 5 (2)
 5 - 6 (3)
-4 - 6 (7)
 ```
 
 ## Depth-First Search Algorithm
