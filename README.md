@@ -56,3 +56,30 @@ VISITED ARRAY : 1 1 1 1 0
 Stack : 1 4
 VISITED ARRAY : 1 1 1 1 1
 ```
+
+## Breadth-First Search Algorithm
+
+Example Graph
+
+```
+0 1 1 0 0
+1 0 0 0 0
+1 0 0 1 1
+0 0 1 0 1
+0 0 1 1 0
+```
+
+Output
+
+```
+QUEUE : 1
+VISITED ARRAY : 0 1 0 0 0
+QUEUE : 0
+VISITED ARRAY : 1 1 0 0 0
+QUEUE : 2
+VISITED ARRAY : 1 1 1 0 0
+QUEUE : 3 4
+VISITED ARRAY : 1 1 1 1 1
+QUEUE : 4
+VISITED ARRAY : 1 1 1 1 1
+```
