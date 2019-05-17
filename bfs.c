@@ -50,15 +50,15 @@ void BFS(int gr[SIZE][SIZE], int node, int visited[], QUEUE *queue) {
   enqueue(queue, node);
   visited[node] = 1;
   while (isQueueEmpty(queue) != 1) {
-    printQueue(queue);
-    printf("VISITED ARRAY : ");
-    for (int k = 0; k < SIZE; k++) {
-      printf("%d ", visited[k]);
-    }
-    printf("\n");
     n = dequeue(queue);
     for (i = 0; i < SIZE; i++) {
       if (gr[n][i] == 1) {
+        printQueue(queue);
+        printf("VISITED ARRAY : ");
+        for (int k = 0; k < SIZE; k++) {
+          printf("%d ", visited[k]);
+        }
+        printf("\n");
         if (visited[i] == 0) {
           enqueue(queue, i);
           visited[i] = 1;
@@ -79,7 +79,7 @@ int main() {
       {0, 0, 1, 1, 0}};
   static int visited[SIZE];
 
-  BFS(gr, 1, visited, queue);
+  BFS(gr, 2, visited, queue);
 
   return 0;
 }
